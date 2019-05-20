@@ -1425,7 +1425,7 @@ While Hesabam supports `https` protocol, all example rely on standard http schem
                                               <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'Hesabam_client'</span>
 
-<span class="no">HesabamClient</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:8080'</span>
+<span class="no">HesabamClient</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">'https://hesabam.com'</span>
 
 <span class="c1"># Multi-tenancy and RBAC credentials</span>
 <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
@@ -1525,7 +1525,7 @@ While Hesabam supports `https` protocol, all example rely on standard http schem
 -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
 -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-<span class="s2">"http://127.0.0.1:8080/1.0/kb/accounts/e8877928-0226-488d-9272-07a5e66d897f?audit=MINIMAL"</span> 
+<span class="s2">"https://hesabam.com/1.0/kb/accounts/e8877928-0226-488d-9272-07a5e66d897f?audit=MINIMAL"</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">Account</span> <span class="n">result</span> <span class="o">=</span> <span class="n">accountApi</span><span class="o">.</span><span class="na">getAccount</span><span class="o">(</span><span class="n">accountId</span><span class="o">,</span>
                                       <span class="kc">false</span><span class="o">,</span>
                                       <span class="kc">false</span><span class="o">,</span>
@@ -1660,7 +1660,7 @@ Known plugin for KB version 0.20.1
 <h2 id='tenant-tenant'>Tenant</h2><h3 id='tenant-create-a-tenant'>Create a tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -1756,7 +1756,7 @@ Known plugin for KB version 0.20.1
 <h3 id='tenant-retrieve-a-tenant-by-id'>Retrieve a tenant by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/{tenantId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/{tenantId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -1831,7 +1831,7 @@ Known plugin for KB version 0.20.1
 <h3 id='tenant-retrieve-a-tenant-by-its-api-key'>Retrieve a tenant by its API key</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -1914,7 +1914,7 @@ in this tenant, such callback would be invoked.</p>
 <h3 id='tenant-register-a-push-notification'>Register a push notification</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants/registerNotificationCallback</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants/registerNotificationCallback</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -1980,7 +1980,7 @@ in this tenant, such callback would be invoked.</p>
 <h3 id='tenant-retrieve-a-registered-push-notification'>Retrieve a registered push notification</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/registerNotificationCallback</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/registerNotificationCallback</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2030,7 +2030,7 @@ in this tenant, such callback would be invoked.</p>
 <h3 id='tenant-delete-a-registered-push-notification'>Delete a registered push notification</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tenants/registerNotificationCallback</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tenants/registerNotificationCallback</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2076,7 +2076,7 @@ Some of the configuration can be overriden at the tenant level to allow for diff
 <h3 id='tenant-add-a-per-tenant-configuration-system-properties'>Add a per tenant configuration (system properties)</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants/uploadPerTenantConfig</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants/uploadPerTenantConfig</code></p>
 
 <p>For example, in order to disable the invoice safety bound mechanism on a per-tenant level, one could overwrite the per-tenant system property <code>org.Hesabam.invoice.sanitySafetyBoundEnabled</code> to false.</p>
 
@@ -2134,7 +2134,7 @@ Some of the configuration can be overriden at the tenant level to allow for diff
 <h3 id='tenant-retrieve-a-per-tenant-configuration-system-properties'>Retrieve a per tenant configuration (system properties)</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/uploadPerTenantConfig</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/uploadPerTenantConfig</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2195,7 +2195,7 @@ Some of the configuration can be overriden at the tenant level to allow for diff
 <h3 id='tenant-retrieve-a-per-tenant-key-value-based-on-key-prefix'>Retrieve a per tenant key value based on key prefix</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/uploadPerTenantConfig/{keyPrefix}/search</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/uploadPerTenantConfig/{keyPrefix}/search</code></p>
 
 <p>The search api allows to search for existing keys based on prefix. So, for instance we can use the prefix <code>PER_TENANT</code> and expect
 to see the result for our previous key <code>PER_TENANT_CONFIG</code>.</p>
@@ -2256,7 +2256,7 @@ to see the result for our previous key <code>PER_TENANT_CONFIG</code>.</p>
 <h3 id='tenant-delete-a-per-tenant-configuration-system-properties'>Delete a per tenant configuration (system properties)</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tenants/uploadPerTenantConfig</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tenants/uploadPerTenantConfig</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2309,7 +2309,7 @@ based on the tenant in which they operate.</p>
 <h3 id='tenant-add-a-per-tenant-configuration-for-a-plugin'>Add a per tenant configuration for a plugin</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2396,7 +2396,7 @@ based on the tenant in which they operate.</p>
 <h3 id='tenant-retrieve-a-per-tenant-configuration-for-a-plugin'>Retrieve a per tenant configuration for a plugin</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2471,7 +2471,7 @@ based on the tenant in which they operate.</p>
 <h3 id='tenant-delete-a-per-tenant-configuration-for-a-plugin'>Delete a per tenant configuration for a plugin</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tenants/uploadPluginConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2535,7 +2535,7 @@ based on the tenant in which they operate.</p>
 <p>Let&#39;s say we want to overwite the default Hesabam payment state machine for the payment plugin <code>demo_plugin</code>, and assuming
 a valid payment state machine xml file in <code>SimplePaymentStates.xml</code>.</p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2659,7 +2659,7 @@ a valid payment state machine xml file in <code>SimplePaymentStates.xml</code>.<
 <h3 id='tenant-retrieve-a-per-tenant-payment-state-machine-for-a-plugin'>Retrieve a per tenant payment state machine for a plugin</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2839,7 +2839,7 @@ a valid payment state machine xml file in <code>SimplePaymentStates.xml</code>.<
 <h3 id='tenant-delete-a-per-tenant-payment-state-machine-for-a-plugin'>Delete a per tenant payment state machine for a plugin</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tenants/uploadPluginPaymentStateMachineConfig/{pluginName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2892,7 +2892,7 @@ for all plugins could be stored here.</p>
 <h3 id='tenant-add-a-per-tenant-user-key-value'>Add a per tenant user key/value</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -2965,7 +2965,7 @@ for all plugins could be stored here.</p>
 <h3 id='tenant-retrieve-a-per-tenant-user-key-value'>Retrieve a per tenant user key/value</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -3027,7 +3027,7 @@ for all plugins could be stored here.</p>
 <h3 id='tenant-delete-a-per-tenant-user-key-value'>Delete a per tenant user key/value</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tenants/userKeyValue/{keyName}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -3096,7 +3096,7 @@ for all plugins could be stored here.</p>
 <h2 id='catalog-catalog'>Catalog</h2><h3 id='catalog-upload-the-full-catalog-as-xml'>Upload the full catalog as XML</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/catalog/xml</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/catalog/xml</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -3155,7 +3155,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-retrieve-the-catalog-as-xml'>Retrieve the catalog as XML</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/xml</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/xml</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -3991,7 +3991,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-retrieve-the-catalog-as-json'>Retrieve the catalog as JSON</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5496,7 +5496,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-retrieve-a-list-of-catalog-versions'>Retrieve a list of catalog versions</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/versions</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/versions</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5542,7 +5542,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-retrieve-available-base-plans'>Retrieve available base plans</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/availableBasePlans</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/availableBasePlans</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5675,7 +5675,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-retrieve-available-add-ons-for-a-given-product'>Retrieve available add-ons for a given product</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/availableAddons</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/availableAddons</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5787,7 +5787,7 @@ for all plugins could be stored here.</p>
 <h3 id='catalog-delete-all-versions-for-a-per-tenant-catalog'>Delete all versions for a per tenant catalog</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/catalog</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/catalog</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5834,7 +5834,7 @@ for all plugins could be stored here.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/phase</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/phase</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -5928,7 +5928,7 @@ for all plugins could be stored here.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/plan</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/plan</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6083,7 +6083,7 @@ for all plugins could be stored here.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/priceList</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/priceList</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6160,7 +6160,7 @@ for all plugins could be stored here.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/catalog/product</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/catalog/product</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6266,7 +6266,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/catalog/simplePlan</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/catalog/simplePlan</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6385,7 +6385,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts</code> </p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts</code> </p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6490,7 +6490,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6687,7 +6687,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6882,7 +6882,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 <h3 id='account-update-an-account'>Update an Account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/accounts/{accountId}</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/accounts/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -6991,7 +6991,7 @@ a new version of this catalog. So, this functionality can also be a stepping sto
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/accounts/{accountId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/accounts/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -7094,7 +7094,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-add-account-email'>Add account email</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/emails</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/emails</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -7163,7 +7163,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-retrieve-an-account-emails'>Retrieve an account emails</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/emails</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/emails</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -7231,7 +7231,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-delete-email-from-account'>Delete email from account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/emails/{email}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/accounts/{accountId}/emails/{email}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -7295,7 +7295,7 @@ several emails for one customer <code>Account</code>.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/bundles</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/bundles</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -8418,7 +8418,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-retrieve-account-invoices'>Retrieve account invoices</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/invoices</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/invoices</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -8702,7 +8702,7 @@ several emails for one customer <code>Account</code>.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/invoicePayments</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/invoicePayments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -8813,7 +8813,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-retrieve-account-invoice-payments'>Retrieve account invoice payments</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/invoicePayments</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/invoicePayments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9025,7 +9025,7 @@ several emails for one customer <code>Account</code>.</p>
 <h3 id='account-retrieve-account-payments'>Retrieve account payments</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/payments</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9241,7 +9241,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/payments</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9426,7 +9426,7 @@ communicating with the payment gateway.</p>
 <h3 id='account-trigger-a-payment-using-the-account-external-key-authorization-purchase-or-credit'>Trigger a payment using the account external key (authorization, purchase or credit)</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/payments</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9558,7 +9558,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/paymentMethods</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/paymentMethods</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9685,7 +9685,7 @@ communicating with the payment gateway.</p>
 <h3 id='account-retrieve-account-payment-methods'>Retrieve account payment methods</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/paymentMethods</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/paymentMethods</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9788,7 +9788,7 @@ communicating with the payment gateway.</p>
 <h3 id='account-set-the-default-payment-method'>Set the default payment method</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/paymentMethods/{paymentMethodId}/setDefault</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/accounts/{accountId}/paymentMethods/{paymentMethodId}/setDefault</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9868,7 +9868,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/paymentMethods/refresh</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/accounts/{accountId}/paymentMethods/refresh</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -9934,7 +9934,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/overdue</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/overdue</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10046,7 +10046,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/block</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/block</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10163,7 +10163,7 @@ communicating with the payment gateway.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/block</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/block</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10309,7 +10309,7 @@ all children <code>Account</code> for a given parent <code>Account</code>.</p>
 <h3 id='account-list-children-accounts'>List children accounts</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/children</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/children</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10500,7 +10500,7 @@ all children <code>Account</code> for a given parent <code>Account</code>.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/accounts/{childAccountId}/transferCredit</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/accounts/{childAccountId}/transferCredit</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10558,7 +10558,7 @@ all children <code>Account</code> for a given parent <code>Account</code>.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10654,7 +10654,7 @@ Assuming there were custom fields attached to various subscriptions, invoices, p
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/allCustomFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/allCustomFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10776,7 +10776,7 @@ Assuming there were custom fields attached to various subscriptions, invoices, p
 <h3 id='account-retrieve-account-custom-fields'>Retrieve account custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10875,7 +10875,7 @@ Assuming there were custom fields attached to various subscriptions, invoices, p
 <h3 id='account-modify-custom-fields-to-account'>Modify custom fields to account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/accounts/{accountId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -10945,7 +10945,7 @@ Assuming there were custom fields attached to various subscriptions, invoices, p
 <h3 id='account-remove-custom-fields-from-account'>Remove custom fields from account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/customField</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/accounts/{accountId}/customField</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11046,7 +11046,7 @@ attached to various objects in the system by using tags. Tags come into 2 differ
 <h3 id='account-add-tags-to-account'>Add tags to account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/accounts/{accountId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11135,7 +11135,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/allTags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/allTags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11252,7 +11252,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h3 id='account-retrieve-account-tags'>Retrieve account tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11374,7 +11374,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h3 id='account-remove-tags-from-account'>Remove tags from account</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/accounts/{accountId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11448,7 +11448,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h2 id='account-audit-logs'>Audit Logs</h2><h3 id='account-retrieve-audit-logs-by-account-id'>Retrieve audit logs by account id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/auditLogs</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/auditLogs</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11588,7 +11588,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h3 id='account-retrieve-account-audit-logs-with-history-by-account-id'>Retrieve account audit logs with history by account id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/auditLogsWithHistory</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/auditLogsWithHistory</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11851,7 +11851,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h3 id='account-retrieve-account-email-audit-logs-with-history-by-id'>Retrieve account email audit logs with history by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/emails/{accountEmailId}/auditLogsWithHistory</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/emails/{accountEmailId}/auditLogsWithHistory</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -11984,7 +11984,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/{accountId}/timeline</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/{accountId}/timeline</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13116,7 +13116,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h2 id='account-pagination-search'>Pagination/Search</h2><h3 id='account-list-accounts'>List accounts</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/pagination</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/pagination</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13340,7 +13340,7 @@ Assuming there were tagged subscriptions, invoices, payments, ... for this speci
 <h3 id='account-search-accounts'>Search accounts</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/accounts/search/{searchKey}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/accounts/search/{searchKey}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13569,7 +13569,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h2 id='payment-method-payment-methods'>Payment Methods</h2><h3 id='payment-method-retrieve-a-payment-method-by-id'>Retrieve a payment method by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13579,7 +13579,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -13709,7 +13709,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-retrieve-a-payment-method-by-external-key'>Retrieve a payment method by external key</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13719,7 +13719,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19?externalKey=coolPaymentMethod'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19?externalKey=coolPaymentMethod'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -13835,7 +13835,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-delete-a-payment-method'>Delete a payment method</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13846,7 +13846,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19'</span>  
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19'</span>  
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -13921,7 +13921,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-add-custom-fields-to-payment-method'>Add custom fields to payment method</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -13939,7 +13939,7 @@ based on custom business rules. Additional information can be found in our <a hr
             "name": "Test Custom Field",
             "value": "test_value"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -13983,7 +13983,7 @@ based on custom business rules. Additional information can be found in our <a hr
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields
+&lt; Location: https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -14018,7 +14018,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-retrieve-payment-method-custom-fields'>Retrieve payment method custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14028,7 +14028,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14114,7 +14114,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-modify-custom-fields-to-payment-method'>Modify custom fields to payment method</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14130,7 +14130,7 @@ based on custom business rules. Additional information can be found in our <a hr
             "customFieldId": "6d4c073b-fd89-4e39-9802-eba65f42492f",
             "value": "NewValue"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14188,7 +14188,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-remove-custom-fields-from-payment-method'>Remove custom fields from payment method</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14199,7 +14199,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=439ed0f8-9b37-4688-bace-e2595b1d3801'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=439ed0f8-9b37-4688-bace-e2595b1d3801'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14259,7 +14259,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h2 id='payment-method-audit-logs'>Audit Logs</h2><h3 id='payment-method-retrieve-payment-method-audit-logs-with-history-by-id'>Retrieve payment method audit logs with history by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods/{paymentMethodId}/auditLogsWithHistory</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods/{paymentMethodId}/auditLogsWithHistory</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14269,7 +14269,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/auditLogsWithHistory'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/916619a4-02bb-4d3d-b3da-2584ac897b19/auditLogsWithHistory'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14391,7 +14391,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h2 id='payment-method-pagination-search'>Pagination/Search</h2><h3 id='payment-method-list-payment-methods'>List payment methods</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods/pagination</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods/pagination</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14401,7 +14401,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/pagination'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/pagination'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14517,7 +14517,7 @@ based on custom business rules. Additional information can be found in our <a hr
 <h3 id='payment-method-search-payment-methods'>Search payment methods</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentMethods/search/{searchKey}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentMethods/search/{searchKey}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14527,7 +14527,7 @@ based on custom business rules. Additional information can be found in our <a hr
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentMethods/search/coolPaymentMethod'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentMethods/search/coolPaymentMethod'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentMethodApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentMethodApi</span> <span class="n">paymentMethodApi</span><span class="o">;</span>
 
@@ -14711,7 +14711,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 <h2 id='subscription-subscriptions'>Subscriptions</h2><h3 id='subscription-create-a-subscription'>Create a subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -14728,7 +14728,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
             "externalKey": "somethingSpecial",
             "planName": "super-monthly"
         }'</span> <span class="se">\</span>
-    <span class="s2">"http://127.0.0.1:8080/1.0/kb/subscriptions"</span> 
+    <span class="s2">"https://hesabam.com/1.0/kb/subscriptions"</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -14785,7 +14785,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712
+&lt; Location: https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Subscription</span> <span class="o">{</span>
@@ -15003,7 +15003,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 <h3 id='subscription-create-a-subscription-with-addon-products'>Create a subscription with addOn products</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions/createSubscriptionWithAddOns</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions/createSubscriptionWithAddOns</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -15032,7 +15032,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
           "priceList": "DEFAULT"
         }
         ]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/createSubscriptionWithAddOns'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/createSubscriptionWithAddOns'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -15139,7 +15139,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/accounts/886adb60-be70-40c8-b97d-1f8ecbc30a64/bundles?bundlesFilter<span class="o">=</span>cbcc7642-1aa5-4609-b89d-5356d05819be
+&lt; Location: https://hesabam.com/1.0/kb/accounts/886adb60-be70-40c8-b97d-1f8ecbc30a64/bundles?bundlesFilter<span class="o">=</span>cbcc7642-1aa5-4609-b89d-5356d05819be
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">BulkSubscriptionsBundle</span> <span class="o">{</span>
@@ -15250,7 +15250,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 <h3 id='subscription-create-multiple-subscriptions-with-addon-products'>Create multiple subscriptions with addOn products</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions/createSubscriptionsWithAddOns</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions/createSubscriptionsWithAddOns</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -15283,7 +15283,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
             ]
           }
         ]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/createSubscriptionsWithAddOns'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/createSubscriptionsWithAddOns'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -15389,7 +15389,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/accounts/886adb60-be70-40c8-b97d-1f8ecbc30a64/bundles?bundlesFilter<span class="o">=</span>cbcc7642-1aa5-4609-b89d-5356d05819be
+&lt; Location: https://hesabam.com/1.0/kb/accounts/886adb60-be70-40c8-b97d-1f8ecbc30a64/bundles?bundlesFilter<span class="o">=</span>cbcc7642-1aa5-4609-b89d-5356d05819be
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Bundle</span> <span class="o">{</span>
@@ -15849,7 +15849,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
 <h3 id='subscription-retrieve-a-subscription-by-id'>Retrieve a subscription by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -15859,7 +15859,7 @@ generation. Aside from the billing aspect -- invoice generation --, Hesabam also
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/d4a919f4-7459-494f-85e5-af8880f63e90'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/d4a919f4-7459-494f-85e5-af8880f63e90'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16225,7 +16225,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/bcd</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/bcd</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16238,7 +16238,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
     -d <span class="s1">'{ "billCycleDayLocal": 16 }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/bcd'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/bcd'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16321,7 +16321,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16339,7 +16339,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
             "billingPeriod": "MONTHLY", 
             "priceList": "DEFAULT"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712'</span>
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712'</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16547,7 +16547,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/undoChangePlan</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/undoChangePlan</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16558,7 +16558,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/undoChangePlan'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/undoChangePlan'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16601,7 +16601,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-cancel-a-subscription-plan'>Cancel a subscription plan</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16612,7 +16612,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712'</span>
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712'</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16737,7 +16737,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/uncancel</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/uncancel</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16748,7 +16748,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/uncancel'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/uncancel'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16795,7 +16795,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/block</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/block</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16814,7 +16814,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
             "isBlockEntitlement": false,
             "isBlockBilling": false
     }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/block'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/block'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16874,7 +16874,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 204 No Content
 &lt; Content-Type: application/json
-&lt; Location: http://127.0.0.1:8080/1.0/kb/accounts/581d86fc-7cfc-46f2-b6d4-4dbc1d98beb3/block?blockingStateTypes<span class="o">=</span>SUBSCRIPTION
+&lt; Location: https://hesabam.com/1.0/kb/accounts/581d86fc-7cfc-46f2-b6d4-4dbc1d98beb3/block?blockingStateTypes<span class="o">=</span>SUBSCRIPTION
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="o">[</span><span class="kd">class</span> <span class="nc">BlockingState</span> <span class="o">{</span>
     <span class="n">org</span><span class="o">.</span><span class="na">Hesabam</span><span class="o">.</span><span class="na">billing</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">model</span><span class="o">.</span><span class="na">gen</span><span class="o">.</span><span class="na">BlockingState</span><span class="nd">@bf898dea</span>
@@ -16928,7 +16928,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-add-custom-fields-to-subscription'>Add custom fields to subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -16946,7 +16946,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
             "name": "Test Custom Field",
             "value": "test_value"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -16990,7 +16990,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields
+&lt; Location: https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -17025,7 +17025,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-retrieve-subscription-custom-fields'>Retrieve subscription custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -17035,7 +17035,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17122,7 +17122,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-modify-custom-fields-to-subscription'>Modify custom fields to subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -17138,7 +17138,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
             "customFieldId": "439ed0f8-9b37-4688-bace-e2595b1d3801",
             "value": "NewValue"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17195,7 +17195,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-remove-custom-fields-from-subscription'>Remove custom fields from subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -17206,7 +17206,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=439ed0f8-9b37-4688-bace-e2595b1d3801'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=439ed0f8-9b37-4688-bace-e2595b1d3801'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17272,7 +17272,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-add-tags-to-subscription'>Add tags to subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -17287,7 +17287,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -d <span class="s1">'[
             "353752dd-9041-4450-b782-a8bb03a923c8"
         ]'</span> <span class="se">\</span>
-  <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags'</span> 
+  <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17319,7 +17319,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags
+&lt; Location: https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -17354,7 +17354,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-retrieve-subscription-tags'>Retrieve subscription tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -17364,7 +17364,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17462,7 +17462,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
 <h3 id='subscription-remove-tags-from-subscription'>Remove tags from subscription</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/subscriptions/{subscriptionId}/tags</code></p>
 
 <p><strong>Query Parameters</strong></p>
 
@@ -17491,7 +17491,7 @@ to realign invoicing, let&#39;s say on the 16th. </p>
     -H <span class="s2">"X-Hesabam-ApiKey: bob"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-ApiSecret: lazar"</span> <span class="se">\</span>
     -H <span class="s2">"X-Hesabam-CreatedBy: demo"</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>  
+    <span class="s1">'https://hesabam.com/1.0/kb/subscriptions/77e23878-8b9d-403b-bf31-93003e125712/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>  
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.SubscriptionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">SubscriptionApi</span> <span class="n">subscriptionApi</span><span class="o">;</span>
 
@@ -17572,7 +17572,7 @@ created.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles/{bundleId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -18206,7 +18206,7 @@ created.</p>
 
 <p>Retrieves the details information for the <code>Bundle</code> using its <code>externalKey</code>.</p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -18828,7 +18828,7 @@ created.</p>
 <h3 id='bundle-update-a-bundle-externalkey'>Update a bundle externalKey</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/renameKey</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/bundles/{bundleId}/renameKey</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -18886,7 +18886,7 @@ created.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/bundles/{bundleId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19232,7 +19232,7 @@ created.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/pause</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/bundles/{bundleId}/pause</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19301,7 +19301,7 @@ created.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/resume</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/bundles/{bundleId}/resume</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19371,7 +19371,7 @@ created.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/block</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/bundles/{bundleId}/block</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19488,7 +19488,7 @@ created.</p>
 <h3 id='bundle-add-custom-fields-to-bundle'>Add custom fields to bundle</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/bundles/{bundleId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19581,7 +19581,7 @@ created.</p>
 <h3 id='bundle-retrieve-bundle-custom-fields'>Retrieve bundle custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles/{bundleId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19676,7 +19676,7 @@ created.</p>
 <h3 id='bundle-modify-custom-fields-to-bundle'>Modify custom fields to bundle</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/bundles/{bundleId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19746,7 +19746,7 @@ created.</p>
 <h3 id='bundle-remove-custom-fields-from-bundle'>Remove custom fields from bundle</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/bundles/{bundleId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19824,7 +19824,7 @@ created.</p>
 <h3 id='bundle-add-tags-to-bundle'>Add tags to bundle</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/bundles/{bundleId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -19910,7 +19910,7 @@ created.</p>
 <h3 id='bundle-retrieve-bundle-tags'>Retrieve bundle tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles/{bundleId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -20028,7 +20028,7 @@ created.</p>
 <h3 id='bundle-remove-tags-from-bundle'>Remove tags from bundle</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/bundles/{bundleId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/bundles/{bundleId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -20103,7 +20103,7 @@ created.</p>
 <h2 id='bundle-pagination-search'>Pagination/Search</h2><h3 id='bundle-list-bundles'>List bundles</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles/pagination</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles/pagination</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -20905,7 +20905,7 @@ created.</p>
 <h3 id='bundle-search-bundles'>Search bundles</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/bundles/search/{searchKey}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/bundles/search/{searchKey}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -21636,7 +21636,7 @@ into account different things to invoice -- e.g recurring items, usage items, fi
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -21743,7 +21743,7 @@ into account different things to invoice -- e.g recurring items, usage items, fi
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/migration/{accountId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/migration/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -21846,7 +21846,7 @@ into account different things to invoice -- e.g recurring items, usage items, fi
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/charges/{accountId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/charges/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -22024,7 +22024,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/taxes/{accountId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/taxes/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -22201,7 +22201,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-retrieve-an-invoice-by-id'>Retrieve an invoice by id</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/{invoiceId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -22395,7 +22395,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-retrieve-an-invoice-by-number'>Retrieve an invoice by number</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/byNumber/{invoiceNumber</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/byNumber/{invoiceNumber</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -22610,7 +22610,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-retrieve-an-invoice-by-invoice-item-id'>Retrieve an invoice by invoice item id</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/byItemId/{itemId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/byItemId/{itemId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -22835,7 +22835,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-render-an-invoice-as-html'>Render an invoice as HTML</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/html</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/{invoiceId}/html</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23264,7 +23264,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-perform-the-invoice-status-transition-from-draft-to-committed'>Perform the invoice status transition from DRAFT to COMMITTED</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/commitInvoice</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/invoices/{invoiceId}/commitInvoice</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23320,7 +23320,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-perform-the-action-of-voiding-an-invoice'>Perform the action of voiding an invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/voidInvoice</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/invoices/{invoiceId}/voidInvoice</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23371,7 +23371,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-adjust-an-invoice-item'>Adjust an invoice item</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/{invoiceId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23508,7 +23508,7 @@ the required <code>TAX</code> items. In some scenario, we also want to add <code
 <h3 id='invoice-delete-a-cba-item'>Delete a CBA item</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/{invoiceItemId}/cba</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/invoices/{invoiceId}/{invoiceItemId}/cba</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23593,7 +23593,7 @@ in the system.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/dryRun</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/dryRun</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23850,7 +23850,7 @@ in the system.</p>
 <h2 id='invoice-payments'>Payments</h2><h3 id='invoice-trigger-a-payment-for-invoice'>Trigger a payment for invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/payments</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/{invoiceId}/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -23978,7 +23978,7 @@ in the system.</p>
 <h3 id='invoice-retrieve-payments-associated-with-an-invoice'>Retrieve payments associated with an invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/payments</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/{invoiceId}/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24197,7 +24197,7 @@ in the system.</p>
 <h3 id='invoice-add-custom-fields-to-invoice'>Add custom fields to invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/{invoiceId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24292,7 +24292,7 @@ in the system.</p>
 <h3 id='invoice-retrieve-invoice-custom-fields'>Retrieve invoice custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/{invoiceId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24387,7 +24387,7 @@ in the system.</p>
 <h3 id='invoice-modify-custom-fields-to-invoice'>Modify custom fields to invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/invoices/{invoiceId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24460,7 +24460,7 @@ in the system.</p>
 <h3 id='invoice-remove-custom-fields-from-invoice'>Remove custom fields from invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/invoices/{invoiceId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24537,7 +24537,7 @@ in the system.</p>
 <h3 id='invoice-add-tags-to-invoice'>Add tags to invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/{invoiceId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24623,7 +24623,7 @@ in the system.</p>
 <h3 id='invoice-retrieve-invoice-tags'>Retrieve invoice tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/{invoiceId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24740,7 +24740,7 @@ in the system.</p>
 <h3 id='invoice-remove-tags-from-invoice'>Remove tags from invoice</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/invoices/{invoiceId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/invoices/{invoiceId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24815,7 +24815,7 @@ in the system.</p>
 <h3 id='invoice-upload-the-catalog-translation-for-the-tenant'>Upload the catalog translation for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/catalogTranslation/{locale}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/catalogTranslation/{locale}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24890,7 +24890,7 @@ in the system.</p>
 <h3 id='invoice-retrieves-the-catalog-translation-for-the-tenant'>Retrieves the catalog translation for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/catalogTranslation/{locale}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/catalogTranslation/{locale}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -24931,7 +24931,7 @@ in the system.</p>
 <h3 id='invoice-upload-the-invoice-translation-for-the-tenant'>Upload the invoice translation for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/translation/{locale}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/translation/{locale}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -25023,7 +25023,7 @@ in the system.</p>
 <h3 id='invoice-retrieves-the-invoice-translation-for-the-tenant'>Retrieves the invoice translation for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/translation/{locale}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/translation/{locale}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -25088,7 +25088,7 @@ sports-monthly <span class="o">=</span> Voiture Sport
 <h3 id='invoice-upload-the-manualpay-invoice-template-for-the-tenant'>Upload the manualPay invoice template for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/manualPayTemplate</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/manualPayTemplate</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -25315,7 +25315,7 @@ sports-monthly <span class="o">=</span> Voiture Sport
 <h3 id='invoice-retrieves-the-manualpay-invoice-template-for-the-tenant'>Retrieves the manualPay invoice template for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/manualPayTemplate</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/manualPayTemplate</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -25666,7 +25666,7 @@ sports-monthly <span class="o">=</span> Voiture Sport
 <h3 id='invoice-upload-the-invoice-template-for-the-tenant'>Upload the invoice template for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoices/template</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoices/template</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -25893,7 +25893,7 @@ sports-monthly <span class="o">=</span> Voiture Sport
 <h3 id='invoice-retrieves-the-invoice-template-for-the-tenant'>Retrieves the invoice template for the tenant</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/template</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/template</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -26244,7 +26244,7 @@ Some_HTML_String
 <h2 id='invoice-pagination-search'>Pagination/Search</h2><h3 id='invoice-list-invoices'>List invoices</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/pagination</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/pagination</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -26556,7 +26556,7 @@ Some_HTML_String
 <h3 id='invoice-search-invoices'>Search invoices</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoices/search/{searchKey}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoices/search/{searchKey}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -26773,7 +26773,7 @@ subsequent invoices to bring the balance to zero -- or reduce the balance if the
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/credits</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/credits</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -26885,7 +26885,7 @@ subsequent invoices to bring the balance to zero -- or reduce the balance if the
 <h3 id='credit-retrieve-a-credit-by-id'>Retrieve a credit by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/credits/{creditId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/credits/{creditId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -26997,7 +26997,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h2 id='payment-payments'>Payments</h2><h3 id='payment-capture-an-existing-authorization'>Capture an existing authorization</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -27016,7 +27016,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -27063,7 +27063,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Payment</span> <span class="o">{</span>
@@ -27177,7 +27177,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-capture-an-existing-authorization-using-external-key'>Capture an existing authorization [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -27196,7 +27196,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 1,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments'</span>     
+    <span class="s1">'https://hesabam.com/1.0/kb/payments'</span>     
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -27238,7 +27238,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Payment</span> <span class="o">{</span>
@@ -27371,7 +27371,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-retrieve-a-payment-by-id-payment'>Retrieve a payment by id [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/{paymentId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -27381,7 +27381,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -27630,7 +27630,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-retrieve-a-payment-by-external-key'>Retrieve a payment by external key</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -27640,7 +27640,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments?externalKey=paymentExternalKey'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments?externalKey=paymentExternalKey'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -27910,7 +27910,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-complete-an-existing-transaction-payment'>Complete an existing transaction [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/payments/{paymentId}</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/payments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -27925,7 +27925,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -d <span class="s1">'{
           "paymentId": "8fe697d4-2c25-482c-aa45-f6cd5a48186d"
       }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -28010,7 +28010,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-complete-an-existing-transaction-using-external-key'>Complete an existing transaction [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/payments</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28025,7 +28025,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -d <span class="s1">'{
           "paymentExternalKey": "paymentExternalKey"
       }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -28108,7 +28108,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-void-an-existing-payment'>Void an existing payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments/{paymentId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28123,7 +28123,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -d <span class="s1">'{
           "paymentId": "8fe697d4-2c25-482c-aa45-f6cd5a48186d"
       }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span>    
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span>    
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -28187,7 +28187,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-void-an-existing-payment-using-external-key'>Void an existing payment [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28202,7 +28202,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -d <span class="s1">'{
           "paymentExternalKey": "paymentExternalKey"
       }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments'</span>     
+    <span class="s1">'https://hesabam.com/1.0/kb/payments'</span>     
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -28264,7 +28264,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-record-a-chargeback-payment'>Record a chargeback [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/chargebacks</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}/chargebacks</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28281,7 +28281,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/chargebacks'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/chargebacks'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">payment_id</span>     <span class="o">=</span> <span class="s2">"42ab1653-051f-416c-8c70-bf5d4061d4fa"</span>
@@ -28313,7 +28313,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -28372,7 +28372,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-record-a-chargeback-using-external-key'>Record a chargeback [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/chargebacks</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/chargebacks</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28389,7 +28389,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/chargebacks'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/chargebacks'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                      <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">payment_external_key</span> <span class="o">=</span> <span class="s2">"example_payment_external_key"</span>
@@ -28420,7 +28420,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -28479,7 +28479,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-record-a-chargeback-reversal-payment'>Record a chargeback reversal [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/chargebackReversals</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}/chargebackReversals</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28495,7 +28495,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "transactionExternalKey": "7ff346e8-24cc-4437-acfa-c79d96d54ee2",
           "paymentId": "8fe697d4-2c25-482c-aa45-f6cd5a48186d",
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/chargebackReversals'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/chargebackReversals'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                          <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">transaction_external_key</span> <span class="o">=</span> <span class="s2">"9ceb96a2-5407-482b-8847-7b08cc64213f"</span>
@@ -28522,7 +28522,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -28592,7 +28592,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-record-a-chargeback-reversal-using-external-key'>Record a chargeback reversal [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/chargebackReversals</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/chargebackReversals</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28608,7 +28608,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "transactionExternalKey": "7ff346e8-24cc-4437-acfa-c79d96d54ee2",
           "paymentExternalKey": "paymentExternalKey",
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/chargebackReversals'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/chargebackReversals'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                      <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">payment_external_key</span> <span class="o">=</span> <span class="s2">"example_payment_external_key"</span>
@@ -28631,7 +28631,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -28701,7 +28701,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-refund-an-existing-payment'>Refund an existing payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/refunds</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}/refunds</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28718,7 +28718,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/refunds'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/refunds'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -28762,7 +28762,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Payment</span> <span class="o">{</span>
@@ -28876,7 +28876,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-refund-an-existing-payment-with-external-key'>Refund an existing payment with external key</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/refunds</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/refunds</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28893,7 +28893,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/refunds'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/refunds'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                      <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">payment_external_key</span> <span class="o">=</span> <span class="s2">"example_payment_external_key"</span>
@@ -28920,7 +28920,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -28979,7 +28979,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-cancels-a-scheduled-payment-attempt-retry'>Cancels a scheduled payment attempt retry</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments/{paymentTransactionId}/cancelScheduledPaymentTransaction</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments/{paymentTransactionId}/cancelScheduledPaymentTransaction</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -28990,7 +28990,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/208d38df-8d5a-4e20-89df-15db4b3516b4/cancelScheduledPaymentTransaction'</span>  
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/208d38df-8d5a-4e20-89df-15db4b3516b4/cancelScheduledPaymentTransaction'</span>  
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">transaction</span>                <span class="o">=</span> <span class="no">HesabamClient</span><span class="o">::</span><span class="no">Model</span><span class="o">::</span><span class="no">Transaction</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">transaction</span><span class="p">.</span><span class="nf">transaction_id</span> <span class="o">=</span> <span class="s2">"231d2bbc-7ce3-4946-b6d9-f24f9a25ff6c"</span>
@@ -29027,7 +29027,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-cancels-a-scheduled-payment-attempt-retry-using-external-key'>Cancels a scheduled payment attempt retry [using external key]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments/cancelScheduledPaymentTransaction</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments/cancelScheduledPaymentTransaction</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29038,7 +29038,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/cancelScheduledPaymentTransaction?transactionExternalKey=transaction'</span>    
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/cancelScheduledPaymentTransaction?transactionExternalKey=transaction'</span>    
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29083,7 +29083,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/combo</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/combo</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29112,7 +29112,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
                 "currency": "USD"
             }
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/combo'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/combo'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.AccountApi</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">AccountApi</span> <span class="n">accountApi</span><span class="o">;</span>
@@ -29171,7 +29171,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/5bebc4c3-7c64-404b-8cd4-0a2150279db8/
+&lt; Location: https://hesabam.com/1.0/kb/payments/5bebc4c3-7c64-404b-8cd4-0a2150279db8/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">ComboPaymentTransaction</span> <span class="o">{</span>
@@ -29287,7 +29287,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-add-custom-fields-to-payment-payment'>Add custom fields to payment [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29305,7 +29305,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
             "name": "Test Custom Field",
             "value": "test_value"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29348,7 +29348,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -29383,7 +29383,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-retrieve-payment-custom-fields-payment'>Retrieve payment custom fields [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29393,7 +29393,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29476,7 +29476,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-modify-custom-fields-to-payment-payment'>Modify custom fields to payment [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/payments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29492,7 +29492,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
             "customFieldId": "e4bac228-872d-4966-8072-2c3ac06442ed",
             "value": "NewValue"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29547,7 +29547,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-remove-custom-fields-from-payment-payment'>Remove custom fields from payment [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29558,7 +29558,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=e4bac228-872d-4966-8072-2c3ac06442ed'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=e4bac228-872d-4966-8072-2c3ac06442ed'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29624,7 +29624,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-add-tags-to-payment-payment'>Add tags to payment [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/payments/{paymentId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29639,7 +29639,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -d <span class="s1">'[
             "353752dd-9041-4450-b782-a8bb03a923c8"
         ]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29671,7 +29671,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -29706,7 +29706,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-retrieve-payment-tags-payment'>Retrieve payment tags [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/{paymentId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29716,7 +29716,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29822,7 +29822,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-remove-tags-from-payment-payment'>Remove tags from payment [payment]</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/payments/{paymentId}/tags</code></p>
 
 <p><strong>Query Parameters</strong></p>
 
@@ -29851,7 +29851,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>   
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>   
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -29914,7 +29914,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h2 id='payment-audit-logs'>Audit Logs</h2><h3 id='payment-retrieve-payment-audit-logs-with-history-by-id'>Retrieve payment audit logs with history by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/{paymentId}/auditLogsWithHistory</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/{paymentId}/auditLogsWithHistory</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -29924,7 +29924,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/auditLogsWithHistory'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/8fe697d4-2c25-482c-aa45-f6cd5a48186d/auditLogsWithHistory'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -30062,7 +30062,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h2 id='payment-pagination-search'>Pagination/Search</h2><h3 id='payment-get-payments'>Get payments</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/pagination</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/pagination</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -30072,7 +30072,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/pagination'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/pagination'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -30379,7 +30379,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
 <h3 id='payment-search-payments'>Search payments</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/payments/search/{searchKey}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/payments/search/{searchKey}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -30389,7 +30389,7 @@ through the <code>InvoicePayment</code> relashionship.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/payments/search/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/payments/search/8fe697d4-2c25-482c-aa45-f6cd5a48186d'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentApi</span> <span class="n">paymentApi</span><span class="o">;</span>
 
@@ -30725,7 +30725,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-retrieve-a-payment-by-transaction-external-key'>Retrieve a payment by transaction external key</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentTransactions</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentTransactions</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -30823,7 +30823,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-retrieve-a-payment-by-transaction-id'>Retrieve a payment by transaction id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -30915,7 +30915,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-mark-a-pending-payment-transaction-as-succeeded-or-failed'>Mark a pending payment transaction as succeeded or failed</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -30957,7 +30957,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-retrieve-payment-transaction-audit-logs-with-history-by-id'>Retrieve payment transaction audit logs with history by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/auditLogsWithHistory</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/auditLogsWithHistory</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31081,7 +31081,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-add-custom-fields-to-payment-transaction'>Add custom fields to payment transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31099,7 +31099,7 @@ that work directly at the transaction level.</p>
             "name": "Test Custom Field",
             "value": "test_value"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31133,7 +31133,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -31159,7 +31159,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-retrieve-payment-transaction-custom-fields'>Retrieve payment transaction custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31169,7 +31169,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31241,7 +31241,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-modify-custom-fields-to-payment-transaction'>Modify custom fields to payment transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31257,7 +31257,7 @@ that work directly at the transaction level.</p>
             "customFieldId": "e4bac228-872d-4966-8072-2c3ac06442ed",
             "value": "NewValue"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31304,7 +31304,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-remove-custom-fields-from-payment-transaction'>Remove custom fields from payment transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31315,7 +31315,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=e4bac228-872d-4966-8072-2c3ac06442ed'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/77e23878-8b9d-403b-bf31-93003e125712/customFields?customField=e4bac228-872d-4966-8072-2c3ac06442ed'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31376,7 +31376,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-add-tags-to-payment-transaction'>Add tags to payment transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31391,7 +31391,7 @@ that work directly at the transaction level.</p>
     -d <span class="s1">'[
             "353752dd-9041-4450-b782-a8bb03a923c8"
         ]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31418,7 +31418,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
+&lt; Location: https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -31444,7 +31444,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-retrieve-payment-transaction-tags'>Retrieve payment transaction tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31454,7 +31454,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31547,7 +31547,7 @@ that work directly at the transaction level.</p>
 <h3 id='payment-transaction-remove-tags-from-payment-transaction'>Remove tags from payment transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/paymentTransactions/{transactionId}/tags</code></p>
 
 <p><strong>Query Parameters</strong></p>
 
@@ -31576,7 +31576,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>    
+    <span class="s1">'https://hesabam.com/1.0/kb/paymentTransactions/8fe697d4-2c25-482c-aa45-f6cd5a48186d/tags?tagDef=353752dd-9041-4450-b782-a8bb03a923c8'</span>    
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.PaymentTransactionApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">PaymentTransactionApi</span> <span class="n">paymentTransactionApi</span><span class="o">;</span>
 
@@ -31657,7 +31657,7 @@ that work directly at the transaction level.</p>
 <h2 id='invoice-payment-invoice-payment'>Invoice Payment</h2><h3 id='invoice-payment-retrieve-a-payment-by-id'>Retrieve a payment by id</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoicePayments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31667,7 +31667,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -31887,7 +31887,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-refund-a-payment-and-adjust-the-invoice-if-needed'>Refund a payment, and adjust the invoice if needed</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/refunds</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/refunds</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -31904,7 +31904,7 @@ that work directly at the transaction level.</p>
           "amount": 50,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/refunds'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/refunds'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -31948,7 +31948,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
+&lt; Location: https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">InvoicePayment</span> <span class="o">{</span>
@@ -32084,7 +32084,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-record-a-chargeback'>Record a chargeback</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/chargebacks</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/chargebacks</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32101,7 +32101,7 @@ that work directly at the transaction level.</p>
           "amount": 5,
           "currency": "USD"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/chargebacks'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/chargebacks'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32142,7 +32142,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
+&lt; Location: https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">InvoicePayment</span> <span class="o">{</span>
@@ -32239,7 +32239,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-complete-an-existing-transaction'>Complete an existing transaction</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/invoicePayments/{paymentId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32254,7 +32254,7 @@ that work directly at the transaction level.</p>
     -d <span class="s1">'{
             "paymentId": "cc7fcd4d-e701-4679-9741-41289103db83"
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32305,7 +32305,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-record-a-chargeback-reversal'>Record a chargeback reversal</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/chargebackReversals</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/chargebackReversals</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32322,7 +32322,7 @@ that work directly at the transaction level.</p>
           "paymentId": "cc7fcd4d-e701-4679-9741-41289103db83",
           "effectiveDate": "2018-07-20T15:05:36.853Z"        
         }'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/chargebackReversals'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/chargebackReversals'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TODO</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">payment_id</span> <span class="o">=</span> <span class="s1">'7a5d4997-5d44-4a82-8371-a410ea5615f4'</span>
 <span class="n">chargeback_transaction_external_key</span> <span class="o">=</span> <span class="s1">'99c45d07-abe4-4bc7-a207-0524548c1b08'</span>
@@ -32353,7 +32353,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
+&lt; Location: https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="p">{</span>
@@ -32426,7 +32426,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-add-custom-fields-to-payment'>Add custom fields to payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32444,7 +32444,7 @@ that work directly at the transaction level.</p>
             "name": "Test Custom Fields",
             "value": "test_value"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32487,7 +32487,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields
+&lt; Location: https://hesabam.com/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -32522,7 +32522,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-retrieve-payment-custom-fields'>Retrieve payment custom fields</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32532,7 +32532,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32616,7 +32616,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-modify-custom-fields-to-payment'>Modify custom fields to payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32632,7 +32632,7 @@ that work directly at the transaction level.</p>
             "customFieldId": "e2408cac-931b-43eb-855b-9f2902615c39",
             "value": "NewValue"
     }]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32687,7 +32687,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-remove-custom-fields-from-payment'>Remove custom fields from payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/customFields</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32698,7 +32698,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields?customField=e2408cac-931b-43eb-855b-9f2902615c39'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/2495e35e-2b96-434c-8877-62dbbf20f7e9/customFields?customField=e2408cac-931b-43eb-855b-9f2902615c39'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32766,7 +32766,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-add-tags-to-payment'>Add tags to payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32781,7 +32781,7 @@ that work directly at the transaction level.</p>
     -d <span class="s1">'[
             "353752dd-9041-4450-b782-a8bb03a923c8"
         ]'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32814,7 +32814,7 @@ that work directly at the transaction level.</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># Subset of headers returned when specifying -v curl option</span>
 &lt; HTTP/1.1 201 Created
-&lt; Location: http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags
+&lt; Location: https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags
 &lt; Content-Type: application/json
 &lt; Content-Length: 0
 </code></pre><pre class="highlight java tab-java"><code><span class="c1">//First element of the list</span>
@@ -32849,7 +32849,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-retrieve-payment-tags'>Retrieve payment tags</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32859,7 +32859,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags'</span> 
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags'</span> 
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -32965,7 +32965,7 @@ that work directly at the transaction level.</p>
 <h3 id='invoice-payment-remove-tags-from-payment'>Remove tags from payment</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/invoicePayments/{paymentId}/tags</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -32976,7 +32976,7 @@ that work directly at the transaction level.</p>
     -H <span class="s1">'X-Hesabam-ApiKey: bob'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-ApiSecret: lazar'</span> <span class="se">\</span>
     -H <span class="s1">'X-Hesabam-CreatedBy: demo'</span> <span class="se">\</span>
-    <span class="s1">'http://127.0.0.1:8080/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags?tagDef=00000000-0000-0000-0000-000000000001'</span>    
+    <span class="s1">'https://hesabam.com/1.0/kb/invoicePayments/cc7fcd4d-e701-4679-9741-41289103db83/tags?tagDef=00000000-0000-0000-0000-000000000001'</span>    
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">org.Hesabam.billing.client.api.gen.InvoicePaymentApi</span><span class="o">;</span>
 <span class="kd">protected</span> <span class="n">InvoicePaymentApi</span> <span class="n">invoicePaymentApi</span><span class="o">;</span>
 
@@ -33045,7 +33045,7 @@ that work directly at the transaction level.</p>
 <h2 id='usage-usage'>Usage</h2><h3 id='usage-record-usage-for-a-subscription'>Record usage for a subscription</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/usages</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/usages</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33115,7 +33115,7 @@ that work directly at the transaction level.</p>
 <h3 id='usage-retrieve-usage-for-a-subscription-and-unit-type'>Retrieve usage for a subscription and unit type</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/usages/{subscriptionId}/{unitType}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/usages/{subscriptionId}/{unitType}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33218,7 +33218,7 @@ that work directly at the transaction level.</p>
 <h3 id='usage-retrieve-usage-for-a-subscription'>Retrieve usage for a subscription</h3>
 <p><strong>HTTP Request</strong></p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/usages/{subscriptionId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/usages/{subscriptionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33321,7 +33321,7 @@ that work directly at the transaction level.</p>
 <h2 id='tag-definition-tag-definition'>Tag Definition</h2><h3 id='tag-definition-create-a-tag-definition'>Create a tag definition</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/tagDefinitions</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/tagDefinitions</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33356,7 +33356,7 @@ that work directly at the transaction level.</p>
 <h3 id='tag-definition-retrieve-a-tag-definition-by-its-id'>Retrieve a tag definition by its ID</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/tagDefinitions/{tagDefinitionId}</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/tagDefinitions/{tagDefinitionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33406,7 +33406,7 @@ that work directly at the transaction level.</p>
 <h3 id='tag-definition-delete-a-tag-definition'>Delete a tag definition</h3>
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/tagDefinitions/{tagDefinitionId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/tagDefinitions/{tagDefinitionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33452,7 +33452,7 @@ that work directly at the transaction level.</p>
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>POST http://127.0.0.1:8080/1.0/kb/admin/invoices</code></p>
+<p><code>POST https://hesabam.com/1.0/kb/admin/invoices</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33532,7 +33532,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/admin/payments/{paymentId}/transactions/{paymentTransactionId}</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/admin/payments/{paymentId}/transactions/{paymentTransactionId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33613,7 +33613,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/admin/cache</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/admin/cache</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33672,7 +33672,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/admin/cache/accounts/{accountId}</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/admin/cache/accounts/{accountId}</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33718,7 +33718,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/admin/cache/tenants</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/admin/cache/tenants</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33762,7 +33762,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>PUT http://127.0.0.1:8080/1.0/kb/admin/healthcheck</code></p>
+<p><code>PUT https://hesabam.com/1.0/kb/admin/healthcheck</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33805,7 +33805,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>DELETE http://127.0.0.1:8080/1.0/kb/admin/healthcheck</code></p>
+<p><code>DELETE https://hesabam.com/1.0/kb/admin/healthcheck</code></p>
 
 <blockquote>
 <p>Example Request:</p>
@@ -33847,7 +33847,7 @@ Later, after possibly retrieveing third party payment gateway data, one can fix 
 
 <p><strong>HTTP Request</strong> </p>
 
-<p><code>GET http://127.0.0.1:8080/1.0/kb/admin/queues</code></p>
+<p><code>GET https://hesabam.com/1.0/kb/admin/queues</code></p>
 
 <blockquote>
 <p>Example Request:</p>
